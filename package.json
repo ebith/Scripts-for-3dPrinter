@@ -1,0 +1,26 @@
+{
+  "name": "shutdown3DPrinter",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "ebith",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "httpie": "^1.1.1",
+    "tplink-smarthome-api": "^1.2.0"
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "rules": {
+      "capitalized-comments": 0
+    },
+    "env": [
+      "node"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120
+  }
+}
