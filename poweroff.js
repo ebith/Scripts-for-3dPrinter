@@ -7,6 +7,9 @@ const tpLink = new (require('tplink-smarthome-api')).Client();
 
   const {data} = await get(`http://${process.env.OCTOPI_HOST}/api/printer?exclude=temperature,sd`, {
     headers: {'X-Api-Key': process.env.API_KEY}
+  }).catch(async () => {
+    await plug.setPowerState(false);
+    process.exit();
   });
   if (!data.state.flags.printing) {
     await post(`http://${process.env.OCTOPI_HOST}/api/system/commands/core/shutdown`, {
